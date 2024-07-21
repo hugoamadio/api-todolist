@@ -1,10 +1,12 @@
 import express from 'express'
 import { Client, Pool } from 'pg'
+import cors from 'cors'
 
 const DATABASE_URL = 'postgresql://projectdb_owner:rRVfs8gPJn6e@ep-tight-waterfall-a4ogt097.us-east-1.aws.neon.tech/MyDatabaseTodoList?sslmode=require'
 
 const app = express()
 
+app.use(cors())
 app.use(express.json())
 
 const pool = new Pool({
